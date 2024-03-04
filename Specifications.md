@@ -10,11 +10,23 @@
 
 
 ## Tables
+### Admin Table
+ - id
+ - First Name
+ - Last Name
+ - Email
+ - Password
+
 ### User Table
  - Id
- - Name
+ - First Name
+ - Last Name
  - Nickname
+ - Email
  - Password
+
+### User View\Join Table
+ - combine users and admins
 
 Table for the user data
 
@@ -45,7 +57,7 @@ Table that includes different roles:
 ### Cross Table
  - Cross Id
  - Object Role Id
- - User Id
+ - User View Id
 
 Table that has data about what user has access to what roles and operations.
 
