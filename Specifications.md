@@ -10,25 +10,14 @@
 
 
 ## Tables
-### Admin Table
- - id
- - First Name
- - Last Name
- - Email
- - Password
-
-### User Table
+### Users Table
  - Id
  - First Name
  - Last Name
  - Nickname
  - Email
  - Password
-
-### User View\Join Table
- - combine users and admins
-
-Table for the user data
+ - Is Admin
 
 ### Movie Table
  - Id
