@@ -1,0 +1,26 @@
+
+.carousel {
+    width: 100%;
+    display: flex;
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); 
+    gap: 30px;
+    cursor: grab;
+
+}
+.item{
+    width: 136px;
+    transition: .3s ease-in-out;
+}
+.item:hover {
+    transform: scale(1.05);
+}
+
+.carousel img {
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    
+
+}

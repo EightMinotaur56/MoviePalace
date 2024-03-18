@@ -1,0 +1,88 @@
+.banner {
+    width: 100%; /* Set the container's width */
+    max-width: 100%; /* Optional: Restrict maximum width */
+    overflow: hidden;
+    position: relative;
+
+}
+.backgroundImg {
+    position: absolute;
+    width: 100%;
+    top: 0;
+
+}
+img{
+
+    width: 100%; /* Set the image's width to cover the container */
+    background-size: cover;
+   
+    
+}
+.gradient {
+    position: absolute;
+    top: 450px;
+
+    height: 300px;
+}
+.gradient img {
+    width: 100%;
+    
+}
+h1 {
+    position: absolute;
+    top: 200px;
+    font-size: 4rem;
+    left: 50px;
+    color: #fff;
+    font-family: 'poppins';
+
+}
+p {
+    position: absolute;
+    top: 300px;
+    color: #fff;
+    left: 50px;
+}
+.btn-banner {
+    position: absolute;
+    top: 400px;
+    left: 50px;
+    display: flex;
+    gap: 24px;
+
+}
+.btn-buy {
+    padding: 10px 60px;
+    border: none;
+    border-radius: 4px;
+    background-color: #9563FF;
+    color:  #fff;
+    font-family: 'poppins';
+    font-weight: 500;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+.btn-buy:hover {
+    background-color: #8b56ed;
+}
+
+.btn-info {
+    padding: 10px 40px;
+    border: none;
+    border-radius: 4px;
+    background-color: #000000;
+    opacity: 70%;
+    color: #fff;
+    font-family: 'poppins';
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+.btn-info:hover {
+    background-color: #1f1f1f;
+
+}

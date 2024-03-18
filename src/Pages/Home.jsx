@@ -13,7 +13,7 @@ const Home = () => {
   const [searchValue, setSearchValue] = useState('');
 
   const getNowShowingMovies = async () => {
-    // Fetch now showing movies from the API   
+    // Fetch now showing movies from the API
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=f211287ee7b15b080bb278734cd356db`;
     const response = await fetch(url);
     const responseJson = await response.json();
@@ -168,3 +168,4 @@ const Home = () => {
   
 };
 
+export default Home;

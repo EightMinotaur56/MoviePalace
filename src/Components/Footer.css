@@ -1,0 +1,81 @@
+.footer {
+    width: 100%;
+    height: 300px;
+    color: #fff;
+    position: relative;
+    top: 800px;
+  }
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    
+}
+.branding {
+    width: 150px;
+    position: absolute;
+    top: -50px;
+    left: 120px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.branding i {
+    font-size: 28px;
+}
+.left-info ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+li {
+    font-size: 14px;
+    color: #686868;
+}
+
+  
+.info-texts {
+    display: flex;
+
+   
+}
+
+.info-texts .middle-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.info-texts .middle-info ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    list-style: none;
+    gap: 10px;
+    
+}
+.info-texts .right-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.info-texts .right-info ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    list-style: none;
+    gap: 10px;
+    
+}
+.info-texts > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+}
+  
+  /* Adjust other styles as needed */
+  
