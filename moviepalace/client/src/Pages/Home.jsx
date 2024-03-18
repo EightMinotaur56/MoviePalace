@@ -11,7 +11,7 @@ const Home = () => {
   const [familyMovies, setFamilyMovies] = useState([]);
   const [sadMovies, setSadMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
-
+// new comment
   const getNowShowingMovies = async () => {
     // Fetch now showing movies from the API
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=f211287ee7b15b080bb278734cd356db`;
