@@ -1,0 +1,23 @@
+.dropdown-content {
+    position: absolute;
+    background-color: black; 
+    color: #fff; 
+    z-index: 1;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .dropdown-content ul {
+    list-style-type:none; 
+    padding: 0;
+  }
+  
+  .dropdown-content ul li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-content ul li:hover {
+    background-color: #333; 
+  }
+  
