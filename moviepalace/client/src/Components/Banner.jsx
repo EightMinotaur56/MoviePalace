@@ -15,7 +15,7 @@ between Earth and the Upside Down</p>
 <div className="btn-banner">
           <button className='btn-buy'>Buy Ticket</button>
           <button className='btn-info'>More Info
-          <i class="fa-solid fa-angle-right"></i>
+          <i className="fa-solid fa-angle-right"></i>
           </button>
         </div>
         <img className='gradient' src={gradient} alt="" />
