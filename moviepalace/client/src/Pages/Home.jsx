@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../Components/Header';
 import Movies from '../Components/Movies';
 import './Home.css';
 import Banner from '../Components/Banner';
@@ -54,27 +53,7 @@ const Home = () => {
     }
   };
 //If our search box if empty then load these default movies(when users delete typed text from search box)
-  const getMoviesRequest = async (searchValue) => {
-    if (searchValue.trim() === "") {
-
-      getNowShowingMovies();
-      getNewlyReleasedMovies();
-      getFamilyMovies();
-      getSadMovies();
-      return;
-    }
-  
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=f211287ee7b15b080bb278734cd356db&query=${searchValue}`;
-  
-    const response = await fetch(url);
-    const responseJson = await response.json();
-  
-    if (responseJson.results) {
-      //Get movie liste based on what user typed in 20movies max
-      setNowShowingMovies(responseJson.results.slice(0, 20));
-
-    }
-  };
+ 
   
   useEffect(() => {
     getNowShowingMovies();
@@ -84,7 +63,27 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    getMoviesRequest(searchValue);
+    const getMoviesRequest = async (searchValue) => {
+      if (searchValue.trim() === "") {
+  
+        getNowShowingMovies();
+        getNewlyReleasedMovies();
+        getFamilyMovies();
+        getSadMovies();
+        return;
+      }
+    
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=f211287ee7b15b080bb278734cd356db&query=${searchValue}`;
+    
+      const response = await fetch(url);
+      const responseJson = await response.json();
+    
+      if (responseJson.results) {
+        //Get movie liste based on what user typed in 20movies max
+        setNowShowingMovies(responseJson.results.slice(0, 20));
+  
+      }
+    };
   }, [searchValue]);
 
   const handleSearchInputChange = (event) => {
