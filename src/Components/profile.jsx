@@ -27,7 +27,7 @@ const ProfileDropdown = () => {
           {/* Dropdown content here */}
           <ul>
           <li><Link to="/login" onClick={handleLogin}>Login</Link></li>
-            <li><Link to="/register" onClick={handleRegister}>Register</Link></li>
+            <li><Link to="/Register" onClick={handleRegister}>Register</Link></li>
           </ul>
         </div>
       )}
