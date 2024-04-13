@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css'; 
+import './login.css'; 
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -57,7 +57,7 @@ function Login() {
         </div>
         <div className="registerPage">
             <label>New to our site?</label>
-          <Link to="./Register">register</Link> 
+          <Link to="/Register">register</Link> 
         </div>
       </div>
     </div>
