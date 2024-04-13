@@ -32,52 +32,56 @@ function Register() {
   };
 
   return (
-    <div className="login-wrapper"> 
-      <div className="login-page">
-        <h2 className='header'>Login Page</h2>
+    <div className="register-wrapper"> 
+      <div className="register-page">
+        <h2 className='header'>Register </h2>
         <form onSubmit={handleSubmit}>
           <div className='name'>
-            <label htmlFor="name">name:</label>
+            <label htmlFor="name">Name : </label>
             <input
               type="text"
               id="Name"
               value={name}
               onChange={handleNameChange}
               required
+              style={{ width: '300px', marginRight: '60px' }} 
             />
           </div>
           <div className='surname'>
-            <label htmlFor="surname">surname:</label>
-            <input
+            <label htmlFor="surname"> Surname : </label>
+            <input 
               type="text"
               id="surname"
               value={surname}
               onChange={handleSurnameChange}
               required
+              style={{ width: '300px', marginRight: '30px' }} 
             />
           </div>
           <div className='Email'>
-            <label htmlFor="Email">email:</label>
+            <label htmlFor="Email">Email : </label>
             <input
               type="text"
               id="Email"
               value={email}
               onChange={handleEmailChange}
               required
+              style={{ width: '300px', marginRight: '20px' }} 
             />
           </div>
-          <div className='password'>
-            <label htmlFor="password">Password:</label>
+          <div className='register-password'>
+            <label htmlFor="password">Password : </label>
             <input
               type="password"
               id="password"
               value={password}
               onChange={handlePasswordChange}
               required
+              style={{ width: '300px', marginRight: '20px' }} 
             />
           </div>
           
-          <button type="submit" className='button'>Login</button>
+          <button type="submit" className='button'>Register</button>
         </form>
         <div className="registerPage">
             <label>Already registered?</label>
