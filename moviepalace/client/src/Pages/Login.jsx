@@ -53,11 +53,11 @@ function Login() {
           <button type="submit" className='button'>Login</button>
         </form>
         <div className="forgotten-password">
-          <Link to="/forgot-password">Forgot password?</Link> 
+          <Link to="/forgotPassword">Forgot password?</Link> 
         </div>
         <div className="registerPage">
             <label>New to our site?</label>
-          <Link to="./Register">register</Link> 
+          <Link to="/Register">register</Link> 
         </div>
       </div>
     </div>
