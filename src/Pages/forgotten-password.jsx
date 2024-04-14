@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './forgotten-password.css'; 
+import Footer from '../Components/Footer';
+import Header from '../Components/Header';
 
 function ForgotPass() {
  
@@ -22,6 +24,8 @@ function ForgotPass() {
   };
 
   return (
+    <div className='headerTopRegister'>
+    <Header />
     <div className="forgot-wrapper"> 
       <div className="forgot-page">
         <h2 className='headerForgot'>ForgotPassword </h2>
@@ -39,15 +43,17 @@ function ForgotPass() {
           </div>
           
           <button type="submit" className='Forgotbutton'>Submit</button>
-          <Link to="/" className='homeButton'>
-           <button type="submit" className='home'>Home</button>
-          </Link>
+          
         </form>
         <div className="forgotPage">
             <label>Already registered?</label>
           <Link to="/Login">Login</Link> 
         </div>
       </div>
+      <div className="footer-register">
+        <Footer />
+      </div>
+    </div>
     </div>
   );
 }
