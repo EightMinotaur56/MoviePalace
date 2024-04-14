@@ -26,8 +26,8 @@ const ProfileDropdown = () => {
         <div className="dropdown-content">
           {/* Dropdown content here */}
           <ul>
-          <li><Link to="/login" onClick={handleLogin}>Login</Link></li>
-            <li><Link to="/Register" onClick={handleRegister}>Register</Link></li>
+          <li><Link to="/login" onClick={handleLogin} style={{ fontWeight: 'bold',fontSize: '16px' }}>Login</Link></li>
+            <li><Link to="/Register" onClick={handleRegister} style={{ fontWeight: 'bold' ,fontSize: '16px'}}>Register</Link></li>
           </ul>
         </div>
       )}
