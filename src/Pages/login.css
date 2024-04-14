@@ -79,3 +79,9 @@
     left: 50px;
     font-family: 'poppins';
 }
+.footer-login {
+  position: absolute;
+  bottom: 600px;
+  width: 100%;
+  color: white;
+}

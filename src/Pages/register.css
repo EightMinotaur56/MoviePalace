@@ -1,22 +1,72 @@
 .register-wrapper {
-    background-image: url('../images/banner.jpg'); 
+    background-color:black; 
     background-size: cover; 
     justify-content: center; 
     align-items: center; 
-    min-height: 100vh; 
+    min-height: 150vh; 
+    left: 200px;
   }
+  .right-sidebar {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(126, 92, 198);
+    width: 400px; 
+    height: 700px;
+    position: absolute;
+    top: 42%;
+    right: 58%; 
+    transform: translateY(-50%);
+    color: white;
+    right: 212px;
+    
+  }
+  
+ 
   
   .register-page {
     padding: 20px;
     border-radius: 5px;
-    background-color:rgb(18, 136, 136); 
-    width: 600px; 
-    height: 300px; 
+    background-color: white; 
+    width: 800px; 
+    height: 700px; 
     position: absolute; 
-    top: 50%; 
-    left: 50%; 
+    top: 42%; 
+    left:  40%; 
     transform: translate(-50%, -50%);
-    color: white;
+    color: black;
+  }
+  .firstp {
+    font-size: 20px;
+    font-weight: bold;
+    top:80px
+
+  }
+  
+  
+  .secondP {
+    font-size: 20px;
+    color:white;
+    font-weight: bold;
+    top:200px;
+  }
+  
+  
+  
+  
+  .right-sidebar h1 {
+    top:120px;
+    font-size: 36px;
+    margin-top: 10px;
+    font-family: 'poppins';
+  }
+
+  .H1{
+    position: absolute;
+    top: 80px;
+    font-size: 32px;
+    left: 238px;
+    color: black;
+    font-family: 'poppins';
   }
   .register-page h2 {
     margin-bottom: 20px;
@@ -30,78 +80,136 @@
   }
 .headerRegister{
     position: absolute;
-    top: 10px;
+    top: 170px;
     font-size: 26px;
     left: 238px;
-    color: #fff;
+    color: black;
     font-family: 'poppins';
 }
 .name{
     position: absolute;
-    top: 50px;
+    top: 230px;
     font-size: 18px;
-    left: 50px;
-    color: #fff;
+    left: 180px;
+    color: black;
     font-family: 'poppins';
+    display: block;
 
+}
+.name label {
+  display: block; 
+}
+.name input {
+  width: 100%; 
+  border: none; 
+  outline: none; 
+}
+.name .underline {
+  width: 100%;
+  height: 1px; 
+  background-color: #ccc; 
 }
 .surname{
     position: absolute;
-    top: 80px;
+    top: 300px;
     font-size: 18px;
-    left: 50px;
-    color: #fff;
+    left: 180px;
+    color: black;
     font-family: 'poppins';
 
+}
+.surname label {
+  display: block; 
+}
+.surname input {
+  width: 100%; 
+  border: none; 
+  outline: none; 
+
+}
+.surname .underline {
+  width: 100%;
+  height: 1px; 
+  background-color: #ccc; 
+  
 }
 
 .Email{
     position: absolute;
-    top: 110px;
+    top: 380px;
     font-size: 18px;
-    left: 50px;
-    color: #fff;
+    left: 180px;
+    color: black;
     font-family: 'poppins';
 
 }
+.Email label {
+  display: block; 
+}
+.Email input {
+  width: 100%; 
+  border: none; 
+  outline: none;
+}
+.Email .underline {
+  width: 100%;
+  height: 1px; 
+  background-color: #ccc; 
+}
 .register-password{
     position: absolute;
-    top: 150px;
+    top: 460px;
     font-size: 16px;
-    left: 50px;
-    color: #fff;
+    left: 180px;
+    color: black;
     font-family: 'poppins';
 }
+.register-password label {
+  display: block; 
+}
+.register-password input {
+  width: 100%; 
+  border: none; 
+  outline: none; 
+   
+}
+.register-password .underline {
+  width: 100%;
+  height: 1px; 
+  background-color: #ccc; 
+}
+
 .button{
     position: absolute;
-    top: 220px;
+    top: 540px;
     font-size: 18px;
-    left: 150px;
+    left: 180px;
     color: white;
-    background-color: #a80d4e;
+    background-color: rgb(126, 92, 198);
     font-family: 'poppins';
+    width: 350px;
 }
-.homeButton{
-    position: absolute;
-    top: 220px;
-    font-size: 18px;
-    left: 300px;
-    color: white;
-    background-color: #5e1fca;
-    font-family: 'poppins';
-}
+
 .forgotten-password{
     position: absolute;
-    top: 160px;
+    top: 560px;
     font-size: 15px;
-    left: 50px;
+    left: 180px;
     color: #a80d4e;
     font-family: 'poppins';
 }
+
 .registerPage{
     position: absolute;
-    top: 190px;
+    top: 590px;
     font-size: 15px;
-    left: 50px;
+    left: 180px;
     font-family: 'poppins';
+}
+
+.footer-register {
+  position: absolute;
+  bottom: 600px;
+  width: 100%;
+  color: white;
 }
