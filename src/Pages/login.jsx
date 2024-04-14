@@ -27,7 +27,7 @@ function Login() {
   return (
     <div className="login-wrapper"> 
       <div className="login-page">
-        <h2 className='header'>Login Page</h2>
+        <h2 className='headerlogin'>Login Page</h2>
         <form onSubmit={handleSubmit}>
           <div className='username'>
             <label htmlFor="username">Username:</label>

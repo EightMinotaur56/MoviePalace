@@ -28,7 +28,7 @@
     margin-bottom: 20px;
     margin-top: 10px;
   }
-.header{
+.headerRegister{
     position: absolute;
     top: 10px;
     font-size: 26px;
@@ -76,9 +76,18 @@
     position: absolute;
     top: 220px;
     font-size: 18px;
-    left: 250px;
+    left: 150px;
     color: white;
     background-color: #a80d4e;
+    font-family: 'poppins';
+}
+.homeButton{
+    position: absolute;
+    top: 220px;
+    font-size: 18px;
+    left: 300px;
+    color: white;
+    background-color: #5e1fca;
     font-family: 'poppins';
 }
 .forgotten-password{

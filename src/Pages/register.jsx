@@ -34,7 +34,7 @@ function Register() {
   return (
     <div className="register-wrapper"> 
       <div className="register-page">
-        <h2 className='header'>Register </h2>
+        <h2 className='headerRegister'>Register </h2>
         <form onSubmit={handleSubmit}>
           <div className='name'>
             <label htmlFor="name">Name : </label>
@@ -82,6 +82,9 @@ function Register() {
           </div>
           
           <button type="submit" className='button'>Register</button>
+          <Link to="/" className='homeButton'>
+           <button type="submit" className='home'>Home</button>
+          </Link>
         </form>
         <div className="registerPage">
             <label>Already registered?</label>
