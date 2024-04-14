@@ -105,9 +105,9 @@ function Register() {
              <div class="underline"></div>
           </div>
           
-          <button type="submit" className='button'>Register</button>
+          <button type="submit" className='buttonRegister'>Register</button>
         </form>
-        <div className="registerPage">
+        <div className="registerPageLink">
             <label>Already registered?</label>
           <Link to="/Login">Sign-in</Link> 
         </div>

@@ -179,7 +179,7 @@
   background-color: #ccc; 
 }
 
-.button{
+.buttonRegister{
     position: absolute;
     top: 540px;
     font-size: 18px;
@@ -190,16 +190,9 @@
     width: 350px;
 }
 
-.forgotten-password{
-    position: absolute;
-    top: 560px;
-    font-size: 15px;
-    left: 180px;
-    color: #a80d4e;
-    font-family: 'poppins';
-}
 
-.registerPage{
+
+.registerPageLink{
     position: absolute;
     top: 590px;
     font-size: 15px;
