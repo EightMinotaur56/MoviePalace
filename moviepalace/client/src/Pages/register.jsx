@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './register.css'; 
+import Footer from '../Components/Footer';
+import Header from '../Components/Header';
 
 function Register() {
   const [name, setName] = useState('');
@@ -32,59 +34,91 @@ function Register() {
   };
 
   return (
-    <div className="login-wrapper"> 
-      <div className="login-page">
-        <h2 className='header'>Login Page</h2>
+    <div className='headerTopRegister'>
+    <Header />
+    <div className="register-wrapper"> 
+    <div className="right-sidebar">
+  <p className='firstp'>Have your account</p>
+  <h1>with us</h1>
+  <p className='secondP'>So you won't miss any of your favourite  movies and series.</p>
+ 
+</div>
+    
+      <div className="register-page">
+      
+      <h1 className='H1'>
+  MOVIE PALACE
+</h1>
+        <h2 className='headerRegister'>Register  your account! </h2>
         <form onSubmit={handleSubmit}>
           <div className='name'>
-            <label htmlFor="name">name:</label>
+            <label htmlFor="name">Name : </label>
             <input
               type="text"
               id="Name"
+              placeholder="Enter your username"
               value={name}
               onChange={handleNameChange}
               required
+              style={{ width: '300px', marginRight: '60px' }} 
             />
+            <div class="underline"></div>
           </div>
           <div className='surname'>
-            <label htmlFor="surname">surname:</label>
-            <input
+            <label htmlFor="surname"> Surname : </label>
+            <input 
               type="text"
               id="surname"
+              placeholder="Enter your surname"
               value={surname}
               onChange={handleSurnameChange}
               required
+              style={{ width: '300px', marginRight: '30px' }} 
             />
+            <div class="underline"></div>
           </div>
           <div className='Email'>
-            <label htmlFor="Email">email:</label>
+            <label htmlFor="Email">Email : </label>
             <input
               type="text"
               id="Email"
+              placeholder="Enter your Email"
               value={email}
               onChange={handleEmailChange}
               required
+              style={{ width: '300px', marginRight: '20px' }} 
+
             />
+             <div class="underline"></div>
           </div>
-          <div className='password'>
-            <label htmlFor="password">Password:</label>
+          <div className='register-password'>
+            <label htmlFor="password">Password : </label>
             <input
               type="password"
               id="password"
+              placeholder='Enter your password'
               value={password}
               onChange={handlePasswordChange}
               required
+              style={{ width: '300px', marginRight: '20px' }} 
             />
+             <div class="underline"></div>
           </div>
           
-          <button type="submit" className='button'>Login</button>
+          <button type="submit" className='buttonRegister'>Register</button>
         </form>
-        <div className="registerPage">
+        <div className="registerPageLink">
             <label>Already registered?</label>
-          <Link to="/Login">Login</Link> 
+          <Link to="/Login">Sign-in</Link> 
         </div>
+        
+      </div>
+      <div className="footer-register">
+        <Footer />
       </div>
     </div>
+    </div>
+  
   );
 }
 
