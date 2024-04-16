@@ -1,4 +1,4 @@
-import { MongoClient, ServerApiVersion }  from 'mongodb';
+import { MongoClient }  from 'mongodb';
 const uri = "mongodb+srv://sostomi9:<password>@moviepalace.o1r5wqd.mongodb.net/?retryWrites=true&w=majority&appName=MoviePalace";
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri);

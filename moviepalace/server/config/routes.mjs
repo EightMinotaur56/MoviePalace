@@ -1,6 +1,4 @@
-// For backend and express
 import db from "./db.mjs";
-import { ObjectId } from "mongodb";
 import express from "express";
 
 
