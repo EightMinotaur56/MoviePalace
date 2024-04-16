@@ -1,5 +1,6 @@
 import db from "./db.mjs";
 import express from "express";
+import { ObjectId } from "mongodb";
 
 
 const router = express.Router();
@@ -14,7 +15,7 @@ router.get("/", async (req, res) => {
 // Get a single user
 router.get("/:id", async (req, res) => {
   let collection = await db.collection(req.baseUrl.replace('/',''));
-  let query = {_id: req.params.id};
+  let query = {_id: new ObjectId(req.params.id)};
   let result = await collection.findOne(query);
 
   if (!result) res.send("Not found").status(404);
@@ -25,14 +26,13 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   let collection = await db.collection(req.baseUrl.replace('/',''));
   let newDocument = req.body;
-  newDocument.date = new Date();
   let result = await collection.insertOne(newDocument);
   res.send(result).status(204);
 });
 
 // Update the post with a new comment
 router.patch("/:id", async (req, res) => {
-  const query = { _id: req.params.id };
+  const query = { _id: new ObjectId(req.params.id) };
   const updates = {
     $push: { comments: req.body }
   };
@@ -45,7 +45,7 @@ router.patch("/:id", async (req, res) => {
 
 // Delete an entry
 router.delete("/:id", async (req, res) => {
-  const query = { _id: req.params.id };
+  const query = { _id: new ObjectId(req.params.id) };
 
   const collection = db.collection(req.baseUrl.replace('/',''));
   let result = await collection.deleteOne(query);

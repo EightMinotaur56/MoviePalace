@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './register.css'; 
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
+import { sha256 } from 'js-sha256';
 
 function Register() {
   const [name, setName] = useState('');
@@ -26,6 +27,20 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     //  logic for handling the login submission
+
+    const hashedPassword = sha256(password);
+
+    const adduser = async ()=>{await fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        firstname: name,lastName: surname,email: email,password: hashedPassword,is_admin:false
+      })
+    }).then(resp => resp.json());
+  }
+  adduser();
     console.log('Name:',name);
     console.log('Password:', password);
     // Reset the form
@@ -62,7 +77,7 @@ function Register() {
               required
               style={{ width: '300px', marginRight: '60px' }} 
             />
-            <div class="underline"></div>
+            <div className="underline"></div>
           </div>
           <div className='surname'>
             <label htmlFor="surname"> Surname : </label>
@@ -75,7 +90,7 @@ function Register() {
               required
               style={{ width: '300px', marginRight: '30px' }} 
             />
-            <div class="underline"></div>
+            <div className="underline"></div>
           </div>
           <div className='Email'>
             <label htmlFor="Email">Email : </label>
@@ -89,7 +104,7 @@ function Register() {
               style={{ width: '300px', marginRight: '20px' }} 
 
             />
-             <div class="underline"></div>
+             <div className="underline"></div>
           </div>
           <div className='register-password'>
             <label htmlFor="password">Password : </label>
@@ -102,7 +117,7 @@ function Register() {
               required
               style={{ width: '300px', marginRight: '20px' }} 
             />
-             <div class="underline"></div>
+             <div className="underline"></div>
           </div>
           
           <button type="submit" className='buttonRegister'>Register</button>

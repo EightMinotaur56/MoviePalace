@@ -18,7 +18,7 @@ app.use("/object_role_users_cross",router);
 
 // Global error handling
 app.use((err, _req, res, next) => {
-  res.status(500).send("Uh oh! An unexpected error occured.")
+  res.status(500).send(err)
 })
 
 // start the Express server
