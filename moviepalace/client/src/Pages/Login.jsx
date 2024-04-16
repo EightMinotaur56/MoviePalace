@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './login.css'; 
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
+import sha256 from 'js-sha256';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -18,9 +19,22 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //  logic for handling the login submission
-    console.log('email:', email);
-    console.log('Password:', password);
+    const users = async () => {
+      let results = await fetch("http://localhost:5000/users").then(resp => resp.json());
+
+      for (let index = 0; index < results.length; index++) {
+        if(results[index].email===email){
+          const pass = results[index].password;
+          const hashedPassword = sha256(password);
+          if(pass===hashedPassword){
+            console.log("success");
+          }
+          break;
+        }
+      }
+    }
+
+    users();
     // Reset the form
     setEmail('');
     setPassword('');
@@ -52,7 +66,7 @@ function Login() {
         required
         style={{ width: '300px', marginRight: '60px' }} 
       />
-      <div class="underline"></div>
+      <div className="underline"></div>
     </div>
     <div className='passwordLogin'>
       <label htmlFor="password">Password:</label>
@@ -65,7 +79,7 @@ function Login() {
         required
         style={{ width: '300px', marginRight: '60px' }} 
       />
-      <div class="underline"></div>
+      <div className="underline"></div>
     </div>
     
     <button type="submit" className='buttonLogin'>Login</button>
