@@ -38,7 +38,27 @@ function Register() {
       body: JSON.stringify({
         firstname: name,lastName: surname,email: email,password: hashedPassword,is_admin:false
       })
-    }).then(resp => resp.json());
+    }).then(async resp =>{
+      const result = await resp.json();
+      await fetch("http://localhost:5000/object_role_users_cross",{
+        method:"POST",
+        headers:{
+          "content-type":"application/json"
+        },
+        body: JSON.stringify({
+          objectRoleId:{"$oid":"661fb0de051b8a304efd5786"},userId:{"$oid":result.insertedId}
+        })
+      }).then(resp=>resp.json());
+      await fetch("http://localhost:5000/object_role_users_cross",{
+        method:"POST",
+        headers:{
+          "content-type":"application/json"
+        },
+        body: JSON.stringify({
+          objectRoleId:{"$oid":"661fb101051b8a304efd5789"},userId:{"$oid":result.insertedId}
+        })
+      }).then(resp=>resp.json());
+    });
   }
   adduser();
     console.log('Name:',name);

@@ -76,8 +76,10 @@ router.delete("/:id", async (req, res) => {
 
   const collection = db.collection('users');
   let result = await collection.deleteOne(query);
+  let objectCrossResult = await db.collection('object_role_users_cross').delete(query);
 
   res.send(result).status(200);
+  res.send(objectCrossResult).status(200);
 });
 
 export default router;
