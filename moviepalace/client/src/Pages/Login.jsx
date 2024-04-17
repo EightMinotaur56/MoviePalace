@@ -20,16 +20,13 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const users = async () => {
-      let results = await fetch("http://localhost:5000/users").then(resp => resp.json());
+      let result = await fetch(`http://localhost:5000/users/email=${email}`).then(resp => resp.json());
 
-      for (let index = 0; index < results.length; index++) {
-        if(results[index].email===email){
-          const pass = results[index].password;
-          const hashedPassword = sha256(password);
-          if(pass===hashedPassword){
-            console.log("success");
-          }
-          break;
+      if(result){
+        const pass = result.password;
+        const hashedPassword = sha256(password);
+        if(pass===hashedPassword){
+          console.log("success");
         }
       }
     }
