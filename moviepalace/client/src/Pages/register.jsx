@@ -30,6 +30,14 @@ function Register() {
 
     const hashedPassword = sha256(password);
 
+    const userExists = async ()=>{
+      let result = await fetch(`http://localhost:5000/users/email=${email}`).then(resp => resp.json());
+
+      if(!result){
+        adduser();
+      }
+    }
+
     const adduser = async ()=>{await fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
@@ -60,7 +68,7 @@ function Register() {
       }).then(resp=>resp.json());
     });
   }
-  adduser();
+  userExists();
     console.log('Name:',name);
     console.log('Password:', password);
     // Reset the form
