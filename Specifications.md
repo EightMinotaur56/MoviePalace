@@ -13,5 +13,12 @@ it contains the following:
 - is admin
   - Boolean value that sets a users as an admin or not
 ### Movies
+- id
 ### Object Role
+- id
+- name
+- note
 ### Object Role Users Cross
+- id
+- object role id
+- user id
