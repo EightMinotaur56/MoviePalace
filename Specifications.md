@@ -1,6 +1,6 @@
 # Project: Movie Palace
 ## Database Tables
-###Users
+### Users
 This table has the information about users
 it contains the following:
 - id
@@ -12,6 +12,6 @@ it contains the following:
   - Hashed
 - is admin
   - Boolean value that sets a users as an admin or not
-###Movies
-###Object Role
-###Object Role Users Cross
+### Movies
+### Object Role
+### Object Role Users Cross
