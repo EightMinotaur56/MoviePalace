@@ -22,6 +22,13 @@ router.get("/id=:id", async (req, res) => {
   else res.send(result).status(200);
 });
 
+router.get("/title=:title", async (req,res)=>{
+  let collection = await db.collection('movies');
+  let results = await collection.find({title:req.params.title}).toArray();
+
+  res.send(results).status(200);
+});
+
 // Add a new document to the collection
 router.post("/", async (req, res) => {
   let collection = await db.collection('movies');

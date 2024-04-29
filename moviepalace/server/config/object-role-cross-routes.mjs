@@ -22,6 +22,26 @@ router.get("/id=:id", async (req, res) => {
   else res.send(result).status(200);
 });
 
+//Get from userId
+router.get("/userId=:id", async (req, res) => {
+  let collection = await db.collection('object_role_users_cross');
+  let query = {userId: new ObjectId(req.params.id)};
+  let result = await collection.find(query).toArray();
+
+  if (!result) res.send("Not found").status(404);
+  else res.send(result).status(200);
+});
+
+//get from objectRoleId
+router.get("/objectRoleId=:id", async (req, res) => {
+  let collection = await db.collection('object_role_users_cross');
+  let query = {objectRoleId: new ObjectId(req.params.id)};
+  let result = await collection.find(query).toArray();
+
+  if (!result) res.send("Not found").status(404);
+  else res.send(result).status(200);
+});
+
 // Add a new document to the collection
 router.post("/", async (req, res) => {
   let collection = await db.collection('object_role_users_cross');
