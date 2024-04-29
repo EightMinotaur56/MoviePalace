@@ -1,4 +1,8 @@
 # Project: Movie Palace
+## The App
+### Home Page
+### Login Page
+### Buy Page
 ## Database Tables
 ### Users
 This table has the information about users
