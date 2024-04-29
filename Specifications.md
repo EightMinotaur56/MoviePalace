@@ -13,12 +13,15 @@ it contains the following:
 - is admin
   - Boolean value that sets a users as an admin or not
 ### Movies
+This table has data about the movies on the site.
 - id
 ### Object Role
+The object role represents different roles that a user could have access to.
 - id
 - name
 - note
 ### Object Role Users Cross
+A cross table that sets the user with their role and accessibility.
 - id
 - object role id
 - user id
