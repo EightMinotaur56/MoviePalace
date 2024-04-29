@@ -7,7 +7,21 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "MoviePalace Chrome Debug",
+      "name": "Run Chrome Debug",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "firefox",
+      "request": "launch",
+      "name": "Run Firefox Debug",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Run Edge Debug",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
     }
