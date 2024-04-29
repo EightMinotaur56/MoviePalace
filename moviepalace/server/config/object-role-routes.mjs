@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
   res.send(results).status(200);
 });
 
-// Get a single user
+// Get a single object_role
 router.get("/id=:id", async (req, res) => {
   let collection = await db.collection('object_role');
   let query = {_id: new ObjectId(req.params.id)};

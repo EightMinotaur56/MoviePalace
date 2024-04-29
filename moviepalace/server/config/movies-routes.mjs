@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
   res.send(results).status(200);
 });
 
-// Get a single user
+// Get a single movie
 router.get("/id=:id", async (req, res) => {
   let collection = await db.collection('movies');
   let query = {_id: new ObjectId(req.params.id)};

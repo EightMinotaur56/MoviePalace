@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
   res.send(results).status(200);
 });
 
-// Get a single user
+// Get a single data
 router.get("/id=:id", async (req, res) => {
   let collection = await db.collection('object_role_users_cross');
   let query = {_id: new ObjectId(req.params.id)};
