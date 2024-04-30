@@ -87,7 +87,7 @@ const Home = () => {
   }, [searchValue]);
 
   const handleSearchInputChange = (event) => {
-    setSearchValue(event.target.value);
+    setSearchValue(event);
   };
 
   return (
@@ -95,7 +95,7 @@ const Home = () => {
       <Banner />
       <Header
         searchValue={searchValue}
-        onSearchInputChange={handleSearchInputChange}
+        onChange={handleSearchInputChange}
         profileDropdown={<ProfileDropdown />} // Pass ProfileDropdown as a prop
       />
       <div className='movies-cat'>
