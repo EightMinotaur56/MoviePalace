@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom'
+import ProfileDropdown from './profile'
 
 
 const Header = (props) => {
@@ -42,11 +43,7 @@ const Header = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div className='user-icon'>
-          <Link to="/login">
-            <i className='fa-solid fa-user'></i>
-          </Link>
-        </div>
+        <ProfileDropdown/>
       </div></>
   )
 }
