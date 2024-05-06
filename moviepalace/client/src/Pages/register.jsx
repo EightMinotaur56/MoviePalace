@@ -31,11 +31,11 @@ function Register() {
     const hashedPassword = sha256(password);
 
     const userExists = async ()=>{
-      let result = await fetch(`http://localhost:5000/users/email=${email}`).then(resp => resp.json());
-
-      if(!result){
-        adduser();
-      }
+      await fetch(`http://localhost:5000/users/email=${email}`).then(resp => {
+        if(resp){
+          adduser();
+        }
+      });
     }
 
     const adduser = async ()=>{await fetch("http://localhost:5000/users", {
@@ -47,28 +47,28 @@ function Register() {
         firstname: name,lastName: surname,email: email,password: hashedPassword,is_admin:false
       })
     }).then(async resp =>{
-      const result = await resp.json();
-      await fetch("http://localhost:5000/object_role_users_cross",{
-        method:"POST",
-        headers:{
-          "content-type":"application/json"
-        },
-        body: JSON.stringify({
-          objectRoleId:{"$oid":"661fb0de051b8a304efd5786"},userId:{"$oid":result.insertedId}
-        })
-      }).then(resp=>resp.json());
-      await fetch("http://localhost:5000/object_role_users_cross",{
-        method:"POST",
-        headers:{
-          "content-type":"application/json"
-        },
-        body: JSON.stringify({
-          objectRoleId:{"$oid":"661fb101051b8a304efd5789"},userId:{"$oid":result.insertedId}
-        })
-      }).then(resp=>resp.json());
-    });
-  }
-  userExists();
+        const result = await resp.json();
+        await fetch("http://localhost:5000/object_role_users_cross",{
+          method:"POST",
+          headers:{
+            "content-type":"application/json"
+          },
+          body: JSON.stringify({
+            objectRoleId:{"$oid":"661fb0de051b8a304efd5786"},userId:{"$oid":result.insertedId}
+          })
+        }).then(resp=>resp.json());
+        await fetch("http://localhost:5000/object_role_users_cross",{
+          method:"POST",
+          headers:{
+            "content-type":"application/json"
+          },
+          body: JSON.stringify({
+            objectRoleId:{"$oid":"661fb101051b8a304efd5789"},userId:{"$oid":result.insertedId}
+            })
+          }).then(resp=>resp.json());
+      });
+    }
+    userExists();
     console.log('Name:',name);
     console.log('Password:', password);
     // Reset the form
