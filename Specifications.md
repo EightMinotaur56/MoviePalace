@@ -2,9 +2,9 @@
 ## The App
 ### Home Page
   The main page categorizes movie genres, such as ‘Most Popular This Week’, ‘New Releases’, ‘Coming Soon’, etc., with an introduction to the selected film at the top. The top right corner allows for movie searches and login.
-### Login Page：
+### Login Page
   username,email address,password
-### Buy Page：
+### Buy Page
   The ticket purchasing page allows users to select movie showtimes, choose seats, and fill in credit card information. The bottom right corner includes details on billing costs, seat reservations, and other information.
 ## Database Tables
 ### Users
