@@ -2,17 +2,20 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "App.js",
+  "main": "App.mjs",
   "scripts": {
-    "start": "nodemon App.js"
+    "start": "nodemon App.mjs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.8",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
     "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "mongodb": "^6.5.0",
     "mysql2": "^3.9.3",
     "node-fetch": "^3.3.2",
     "sequelize": "^6.37.2"
@@ -21,4 +24,3 @@
     "nodemon": "^3.1.0"
   }
 }
-

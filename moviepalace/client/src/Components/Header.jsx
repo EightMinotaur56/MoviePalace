@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom'
+import ProfileDropdown from './profile'
 
 
-const Header = () => {
+const Header = (props) => {
+  const handleChange = event =>{
+    props.onChange(event.target.value);
+  }
   return (
     
     <>
@@ -36,14 +40,10 @@ const Header = () => {
           <input
             type='text'
             placeholder='Type to search...'
-            
+            onChange={handleChange}
           />
         </div>
-        <div className='user-icon'>
-          <Link to="/login">
-            <i className='fa-solid fa-user'></i>
-          </Link>
-        </div>
+        <ProfileDropdown/>
       </div></>
   )
 }
