@@ -92,7 +92,7 @@ const Home = () => {
   }, [searchValue]);
 
   const handleSearchInputChange = (event) => {
-    setSearchValue(event.target.value);
+    setSearchValue(event);
   };
 
   return (
