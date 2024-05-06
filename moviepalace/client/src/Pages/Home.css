@@ -37,6 +37,7 @@ h3{
 .sad-movies h3{
     position: absolute;
     top: 1165px;
+
 }
 .searched-movies h3{
     position: absolute;
@@ -46,6 +47,6 @@ h3{
 
 .footer-home {
     position: absolute;
-    top: 1300px;
+    top: 2100px;
     width: 100%;
 }
