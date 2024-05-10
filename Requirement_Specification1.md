@@ -12,7 +12,7 @@ Current Business Flow Model: While there are numerous movie booking websites, ou
 
 Project Outline: This project aims to enhance the skills and teamwork capabilities of junior developers. We will utilize classes and IDs to organize code efficiently. Emphasis will be placed on implementing simple yet effective functionality, ensuring the project remains straightforward for all team members.
 
-Current Situation: Recognizing the growing demand for efficient online movie booking, we have decided to create a specialized website. The project structure and a team of 5 members are already in place.
+Current Situation: Recognizing the growing demand for efficient online movie booking, we have decided to create a specialized website. The project structure and a team of 7 members are already in place.
 
 Goal: The goal of this project is to equip participants with essential skills for success in the technology field. We aim to deliver a user-friendly application that showcases data manipulation skills, providing an enjoyable and seamless experience for users. Effective teamwork is crucial in achieving this goal.
 
