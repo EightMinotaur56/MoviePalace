@@ -9,6 +9,8 @@ const OnClick = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const { movieId } = useParams();
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [selectedTime, setSelectedTime] = useState("");
+  const [showPopup, setShowPopup] = useState(false); // State for controlling the visibility of the popup
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -28,8 +30,16 @@ const OnClick = () => {
   }, [movieId]);
 
   const handleContinueClick = () => {
-    setSelectedMovie(movieId);
-    window.location.href = `/confirmation/${movieId}`;
+    if (!selectedTime) {
+      setShowPopup(true); // Show the popup if time is not selected
+    } else {
+      setSelectedMovie(movieId);
+      window.location.href = `/confirmation/${movieId}?time=${selectedTime}`;
+    }
+  };
+
+  const handleTimeSelection = (selectedTime) => {
+    setSelectedTime(selectedTime);
   };
 
   return (
@@ -58,7 +68,7 @@ const OnClick = () => {
           )}
         </div>
         <div className="des">
-        {movieDetails && (
+          {movieDetails && (
             <div>
               <h2>{movieDetails.overview}</h2>
             </div>
@@ -83,12 +93,12 @@ const OnClick = () => {
 
       <div className="movie-info">
         <div className="movie-cover">
-        {movieDetails && (
-    <img src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={movieDetails.title} />
-  )}
+          {movieDetails && (
+            <img src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={movieDetails.title} />
+          )}
         </div>
         <div className="movie-info-title">
-        {movieDetails && (
+          {movieDetails && (
             <div>
               <h2>{movieDetails.title}</h2>
               <i className="fa-regular fa-clock"></i>
@@ -102,10 +112,10 @@ const OnClick = () => {
           <span>IMAX 2D</span>
           <div className="time1">
             <div className="time11">
-              <span>13:00</span>
+              <span className={selectedTime === "10:00" ? 'selected-time' : ''} onClick={() => handleTimeSelection("10:00")}>10:00</span>
             </div>
             <div className="time2">
-              <span>20:00</span>
+              <span className={selectedTime === "14:00" ? 'selected-time' : ''} onClick={() => handleTimeSelection("14:00")}>14:00</span>
             </div>
           </div>
         </div>
@@ -113,6 +123,13 @@ const OnClick = () => {
           <button onClick={handleContinueClick}>continue</button>
         </div>
       </div>
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <button onClick={() => setShowPopup(false)}>Please select a time before continuing.</button>
+          </div>
+        </div>
+      )}
       <Footer />
     </div>
   );

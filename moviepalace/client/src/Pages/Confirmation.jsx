@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'; // Import useState and useEffect
-import { useParams } from 'react-router-dom'; // Import useParams
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './Confirmation.css';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
@@ -8,7 +8,7 @@ import witches from '../images/witches.png';
 const Confirmation = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const { movieId } = useParams();
-
+  const [selectedTime, setSelectedTime] = useState("");
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
@@ -25,6 +25,28 @@ const Confirmation = () => {
 
     fetchMovieDetails();
   }, [movieId]);
+
+
+  const generateRandomSeat = () => {
+    const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    const randomNumber = Math.floor(Math.random() * 10); // Generate a random number between 0 and 9
+    const randomLetterIndex = Math.floor(Math.random() * letters.length); // Generate a random index for selecting a letter
+    const randomLetter = letters[randomLetterIndex]; // Select a random letter from the letters array
+    return `${randomNumber}${randomLetter}`; // Combine the random number and letter
+  };
+
+  const randomSeat = generateRandomSeat();
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const timeParam = urlParams.get('time');
+    if (timeParam) {
+      setSelectedTime(timeParam);
+    }
+
+   
+  }, []);
+
 
   return (
     <div className='confirmation'>
@@ -43,7 +65,7 @@ const Confirmation = () => {
       <div className="cover"></div>
       <div className="info">
         <div className="title">
-        {movieDetails && (
+          {movieDetails && (
             <div>
               <h2>{movieDetails.title}</h2>
             </div>
@@ -51,11 +73,13 @@ const Confirmation = () => {
           <i className="fa-regular fa-clock"></i>
           <span>1HR 45MIN</span>
         </div>
-        <div className="des">{movieDetails && (
+        <div className="des">
+          {movieDetails && (
             <div>
               <h2>{movieDetails.overview}</h2>
             </div>
-          )}</div>
+          )}
+        </div>
       </div>
     
       <div className="progress-bar">
@@ -74,9 +98,9 @@ const Confirmation = () => {
       </div>
       <div className="movie-info">
         <div className="movie-cover">
-        {movieDetails && (
-    <img src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={movieDetails.title} />
-  )}
+          {movieDetails && (
+            <img src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={movieDetails.title} />
+          )}
         </div>
         <div className="movie-info-title">
           {movieDetails && (
@@ -91,10 +115,10 @@ const Confirmation = () => {
           <span>IMAX 2D</span>
           <div className="time-seat">
             <div className="time">
-              <span>20:00</span>
+            <span>{selectedTime}</span>
             </div>
             <div className="seat">
-              <span>4A</span>
+              <span>{randomSeat}</span>
             </div>
           </div>
         </div>
