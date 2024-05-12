@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Header from '../Components/Header';
 import Movies from '../Components/Movies';
 import './Home.css';
-import Banner from '../Components/Banner';
-import ProfileDropdown from '../Components/profile';
+import Banner from '../Components/Banner.jsx';
+import ProfileDropdown from '../Components/profile.jsx';
 import { useNavigate } from 'react-router-dom';
 import MovieScreen from './MovieScreen';
 
@@ -15,11 +15,19 @@ const Home = () => {
   const [sadMovies, setSadMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
-  const handleMovieClick = (movieId) => {
-    window.location.href = `/onclick/${movieId}`; // Navigate to OnClick component with movieId
+  const navigate = useNavigate();
+
+
+  const handleMovieClick = (movieId, movieInfo) => {
+    
+    setSelectedMovie(movieId);
+    
+    navigate('/movie/${movieId}');
   };
+  
+
   const getNowShowingMovies = async () => {
-    const url = `https://api.themoviedb.org/3/discover/movie?api_key=f211287ee7b15b080bb278734cd356db`;
+    const url = 'https://api.themoviedb.org/3/discover/movie?api_key=f211287ee7b15b080bb278734cd356db';
     const response = await fetch(url);
     const responseJson = await response.json();
 
@@ -29,7 +37,7 @@ const Home = () => {
   };
 
   const getNewlyReleasedMovies = async () => {
-    const url = `https://api.themoviedb.org/3/discover/movie?with_genres=99&api_key=f211287ee7b15b080bb278734cd356db`;
+    const url = 'https://api.themoviedb.org/3/discover/movie?with_genres=99&api_key=f211287ee7b15b080bb278734cd356db';
     const response = await fetch(url);
     const responseJson = await response.json();
 
@@ -39,7 +47,7 @@ const Home = () => {
   };
 
   const getFamilyMovies = async () => {
-    const url = `https://api.themoviedb.org/3/discover/movie?with_genres=35&api_key=f211287ee7b15b080bb278734cd356db`;
+    const url = 'https://api.themoviedb.org/3/discover/movie?with_genres=35&api_key=f211287ee7b15b080bb278734cd356db';
     const response = await fetch(url);
     const responseJson = await response.json();
 
@@ -48,7 +56,7 @@ const Home = () => {
     }
   };
   const getSadMovies = async () => {
-    const url = `https://api.themoviedb.org/3/discover/movie?with_genres=18&api_key=f211287ee7b15b080bb278734cd356db`;
+    const url = 'https://api.themoviedb.org/3/discover/movie?with_genres=18&api_key=f211287ee7b15b080bb278734cd356db';
     const response = await fetch(url);
     const responseJson = await response.json();
 
@@ -64,7 +72,7 @@ const Home = () => {
       return;
     }
 
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=f211287ee7b15b080bb278734cd356db&query=${searchValue}`;
+    const url = 'https://api.themoviedb.org/3/search/movie?api_key=f211287ee7b15b080bb278734cd356db&query=${searchValue}';
     const response = await fetch(url);
     const responseJson = await response.json();
 
@@ -86,7 +94,7 @@ const Home = () => {
   }, [searchValue]);
 
   const handleSearchInputChange = (event) => {
-    setSearchValue(event);
+    setSearchValue(event.target.value);
   };
 
   return (
