@@ -11,6 +11,8 @@
   .dropdown-content ul {
     list-style-type:none; 
     padding: 0;
+    display: flex;
+    flex-direction: column;
   }
   
   .dropdown-content ul li {
@@ -19,6 +21,10 @@
   }
   
   .dropdown-content ul li:hover {
-    background-color: #333; 
+    background-color: #acacac; 
+  }
+
+  .dropdown-box {
+    background-color: white;
   }
   

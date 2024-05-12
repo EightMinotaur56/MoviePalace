@@ -25,10 +25,12 @@ const ProfileDropdown = () => {
       {isOpen && (
         <div className="dropdown-content">
           {/* Dropdown content here */}
-          <ul>
-          <li><Link to="/login" onClick={handleLogin}>Login</Link></li>
-            <li><Link to="/Register" onClick={handleRegister}>Register</Link></li>
-          </ul>
+          <div className="dropdown-box">
+            <ul>
+              <li><Link to="/login" onClick={handleLogin}>Login</Link></li>
+              <li><Link to="/Register" onClick={handleRegister}>Register</Link></li>
+            </ul>
+          </div>
         </div>
       )}
     </div>
