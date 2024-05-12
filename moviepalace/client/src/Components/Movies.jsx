@@ -3,12 +3,16 @@ import './Movies.css';
 import { motion } from "framer-motion";
 
 const Movies = (props) => {
+  const { movies, handleMovieClick } = props;
+
   return (
     <motion.div className="outer">
       <motion.div className='carousel'>
-        {props.movies.map((movie, index) => (
-          <motion.div className='item' key={index}>
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+        {movies.map((movie, index) => (
+          <motion.div className='item' key={index} onClick={() => handleMovieClick(movie.id, movie)}>
+            {movie && movie.poster_path && (
+              <img src={'https://image.tmdb.org/t/p/w500${movie.poster_path}} alt={movie.title'} />
+            )}
           </motion.div>
         ))}
       </motion.div>
@@ -17,4 +21,3 @@ const Movies = (props) => {
 };
 
 export default Movies;
- 

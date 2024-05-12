@@ -1,33 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-const MovieScreen = ({ movie }) => {
-  // Debugging: Log the value of the movie prop
-  console.log('Movie:', movie);
+const MovieScreen = () => {
+  const [movieDetails, setMovieDetails] = useState(null);
+  const { movieId } = useParams();
 
-  
-  if (!movie) {
-    return <div>Loading...</div>; 
-  }
+  useEffect(() => {
+    const fetchMovieDetails = async () => {
+      try {
+        const response = await fetch('https://api.themoviedb.org/3/movie/${movieId}?api_key=f211287ee7b15b080bb278734cd356db');
+        if (!response.ok) {
+          throw new Error('Failed to fetch movie details (HTTP status: ${response.status})');
+        }
+        const data = await response.json();
+        setMovieDetails(data);
+      } catch (error) {
+        console.error('Error fetching movie details:', error.message);
+      }
+    };
 
- 
-  const { title, overview, release_date, poster_path } = movie;
+    fetchMovieDetails();
+  }, [movieId]);
 
   return (
-    <div className="movie-screen">
-     
-      {poster_path && (
-        <img
-          src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-          alt={`${title} Poster`}
-          className="movie-poster"
-        />
+    <div>
+      {movieDetails && (
+        <div>
+          <p>{movieDetails.title}</p>
+          
+          {/* Display other movie details as needed */}
+        </div>
       )}
-     
-      <h2 className="movie-title">{title}</h2>
-    
-      <p><strong>Release Date:</strong> {release_date}</p>
-     
-      <p className="movie-overview">{overview}</p>
     </div>
   );
 };
