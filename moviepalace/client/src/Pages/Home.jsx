@@ -15,15 +15,9 @@ const Home = () => {
   const [sadMovies, setSadMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
-  const navigate = useNavigate();
-
-
-  const handleMovieClick = (movieId, movieInfo) => {
-    setSelectedMovie(movieInfo);
-    navigate(`/movie/${movieId}`, { state: { movieInfo } });
+  const handleMovieClick = (movieId) => {
+    window.location.href = `/onclick/${movieId}`; // Navigate to OnClick component with movieId
   };
-  
-
   const getNowShowingMovies = async () => {
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=f211287ee7b15b080bb278734cd356db`;
     const response = await fetch(url);

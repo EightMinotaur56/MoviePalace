@@ -7,6 +7,7 @@ import MovieScreen from './Pages/MovieScreen';
 import Confirmation from './Pages/Confirmation';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ForgotPass from './Pages/forgotten-password';
+import OnClick from './Pages/onClick';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/forgotten-password" element={<ForgotPass />} />
           <Route path="/movie/:id" element={<MovieScreen />} />
           <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/onclick" element={<OnClick />} />
 
 
         </Routes>
