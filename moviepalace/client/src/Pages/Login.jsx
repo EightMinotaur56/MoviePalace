@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './login.css'; 
 import Footer from '../Components/Footer';
@@ -20,24 +20,35 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const users = async () => {
-      await fetch(`http://localhost:5000/users/email=${email}`).then(resp => {
-        const ressult = resp.json();
-        if(result){
+      try {
+        const response = await fetch(`http://localhost:5000/users/email=${email}`);
+        const result = await response.json();
+        
+        if (result) {
           const pass = result.password;
           const hashedPassword = sha256(password);
-          if(pass===hashedPassword){
-            console.log("success");
+          
+          if (pass === hashedPassword) {
+            console.log("Login successful");
+            // Redirect to the home page here
+            window.location.href = "/"; // Change "/" to the URL of your home page
+          } else {
+            console.log("Incorrect password");
           }
         }
-      }).catch(()=>console.log('Could not connect to server'));
-
-      
-    }
+      } catch (error) {
+        console.log('Could not connect to server');
+      }
+    };
 
     users();
     // Reset the form
     setEmail('');
     setPassword('');
+  };
+
+  const handleLoginClick = () => {
+    window.location.href = `/`; // Redirect to the home page
   };
 
   return (
@@ -74,7 +85,7 @@ function Login() {
               />
               <div className="underline"></div>
             </div>
-            <button type="submit" className='buttonLogin'>Login</button>
+            <button type="submit" className='buttonLogin' onClick={handleLoginClick}>Login</button>
           </form>
           <div className="forgotten-password">
             <Link to="/forgotten-password">Forgot password?</Link> 
@@ -88,7 +99,6 @@ function Login() {
       <div style={{marginTop:100}}></div>
       <Footer />
     </div>
-    
   );
 }
 
