@@ -78,21 +78,16 @@ function Register() {
 
   return (
     <div className='headerTopRegister'>
-    <Header />
-    <div className="register-wrapper"> 
-    <div className="right-sidebar">
-  <p className='firstp'>Have your account</p>
-  <h1>with us</h1>
-  <p className='secondP'>So you won't miss any of your favourite  movies and series.</p>
- 
-</div>
-    
-      <div className="register-page">
-      
-      <h1 className='H1'>
-  MOVIE PALACE
-</h1>
-        <h2 className='headerRegister'>Register  your account! </h2>
+      <Header />
+      <div className="register-wrapper"> 
+        <div className="right-sidebar">
+          <p className='firstp'>Have your account</p>
+          <h1>with us</h1>
+          <p className='secondP'>So you won't miss any of your favourite  movies and series.</p>
+        </div>
+        <div className="register-page">
+        <h1 className='H1'>MOVIE PALACE</h1>
+        <h2 className='headerRegister'>Register  your account!</h2>
         <form onSubmit={handleSubmit}>
           <div className='name'>
             <label htmlFor="name">Name : </label>
@@ -155,13 +150,10 @@ function Register() {
           <Link to="/Login">Sign-in</Link> 
         </div>
         
+        </div>
       </div>
-      <div className="footer-register">
         <Footer />
-      </div>
     </div>
-    </div>
-  
   );
 }
 

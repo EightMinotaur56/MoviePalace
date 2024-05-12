@@ -3,7 +3,7 @@
     height: 300px;
     color: #fff;
     position: relative;
-    top: 800px;
+    bottom:0;
   }
 .container {
     width: 80%;

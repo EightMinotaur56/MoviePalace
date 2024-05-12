@@ -136,8 +136,7 @@
 }
 .footer-login {
   position: absolute;
-  bottom: 600px;
   width: 100%;
   color: white;
-  top: 50px;
+  bottom: 0;
 }
