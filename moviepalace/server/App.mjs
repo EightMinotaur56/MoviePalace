@@ -6,6 +6,7 @@ import users from "./config/user-routes.mjs";
 import movies from "./config/movies-routes.mjs";
 import object_role from "./config/object-role-routes.mjs";
 import object_role_users_cross from "./config/object-role-cross-routes.mjs";
+import reservations from "./config/reservations.mjs"
 
 const PORT = process.env.PORT || 5000;
 const app = express();
