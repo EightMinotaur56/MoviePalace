@@ -20,15 +20,18 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const users = async () => {
-      let result = await fetch(`http://localhost:5000/users/email=${email}`).then(resp => resp.json());
-
-      if(result){
-        const pass = result.password;
-        const hashedPassword = sha256(password);
-        if(pass===hashedPassword){
-          console.log("success");
+      await fetch(`http://localhost:5000/users/email=${email}`).then(resp => {
+        const ressult = resp.json();
+        if(result){
+          const pass = result.password;
+          const hashedPassword = sha256(password);
+          if(pass===hashedPassword){
+            console.log("success");
+          }
         }
-      }
+      }).catch(()=>console.log('Could not connect to server'));
+
+      
     }
 
     users();

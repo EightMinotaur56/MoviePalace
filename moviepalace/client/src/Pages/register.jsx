@@ -36,6 +36,8 @@ function Register() {
         if(resp){
           adduser();
         }
+      }).catch(e=>{
+        console.log('Could not connect to server')
       });
     }
 
