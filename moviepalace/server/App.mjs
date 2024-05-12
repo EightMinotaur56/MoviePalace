@@ -19,6 +19,7 @@ app.use("/users", users);
 app.use("/movies", movies);
 app.use("/object_role", object_role);
 app.use("/object_role_users_cross", object_role_users_cross);
+app.use("/reservvations",reservations);
 
 // Global error handling
 app.use((err, _req, res, _next) => {

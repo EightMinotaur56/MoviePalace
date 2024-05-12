@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
 router.patch("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
   const updates = {
-    $push: { comments: req.body }
+    $push: req.body
   };
 
   let collection = await db.collection('object_role');

@@ -6,15 +6,15 @@ import { ObjectId } from "mongodb";
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  let collection = await db.collection('movies');
+  let collection = await db.collection('reservations');
   let results = await collection.find({}).toArray();
 
   res.send(results).status(200);
 });
 
-// Get a single movie
+// Get a single reservation by id
 router.get("/id=:id", async (req, res) => {
-  let collection = await db.collection('movies');
+  let collection = await db.collection('reservations');
   let query = {_id: new ObjectId(req.params.id)};
   let result = await collection.findOne(query);
 
@@ -22,16 +22,9 @@ router.get("/id=:id", async (req, res) => {
   else res.send(result).status(200);
 });
 
-router.get("/title=:title", async (req,res)=>{
-  let collection = await db.collection('movies');
-  let results = await collection.find({title:req.params.title}).toArray();
-
-  res.send(results).status(200);
-});
-
 // Add a new document to the collection
 router.post("/", async (req, res) => {
-  let collection = await db.collection('movies');
+  let collection = await db.collection('reservations');
   let newDocument = req.body;
   let result = await collection.insertOne(newDocument);
   res.send(result).status(204);
@@ -41,10 +34,10 @@ router.post("/", async (req, res) => {
 router.patch("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
   const updates = {
-    $push: req.body 
+    $push:  req.body 
   };
 
-  let collection = await db.collection('movies');
+  let collection = await db.collection('reservations');
   let result = await collection.updateOne(query, updates);
 
   res.send(result).status(200);
@@ -54,7 +47,7 @@ router.patch("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
 
-  const collection = db.collection('movies');
+  const collection = db.collection('reservations');
   let result = await collection.deleteOne(query);
 
   res.send(result).status(200);
