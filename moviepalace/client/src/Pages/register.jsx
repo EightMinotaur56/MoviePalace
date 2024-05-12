@@ -10,6 +10,7 @@ function Register() {
   const [surname, setSurname] = useState('');  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false); 
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -74,6 +75,13 @@ function Register() {
     // Reset the form
     setName('');
     setPassword('');
+
+    setShowSuccessPopup(true); // Set showSuccessPopup to true after successful registration
+    setName('');
+    setSurname('');
+    setEmail('');
+    setPassword('');
+  
   };
 
   return (
@@ -144,6 +152,13 @@ function Register() {
           </div>
           
           <button type="submit" className='buttonRegister'>Register</button>
+          {showSuccessPopup && ( // Render the pop-up if showSuccessPopup is true
+          <div className="popup">
+            <div className="popup-content">
+              <button onClick={() => setShowSuccessPopup(false)}>Registration Successful!</button>
+            </div>
+          </div>
+        )}
         </form>
         <div className="registerPageLink">
             <label>Already registered?</label>
