@@ -19,34 +19,39 @@ h3{
     flex-direction:column;
     
 }
-.now-showing h3{
+.now-showing h2{
     position: absolute;
     top: 90px;
+    color: #fff;
 }
-.just-released h3{
+.just-released h2{
     position: absolute;
     top: 450px;
+    color: #fff;
 }
-.family-movies h3{
+.family-movies h2{
     position: absolute;
     top: 805px;
+    color: #fff;
 }
 .searched-movies {
     margin-bottom: 50px;
 }
-.sad-movies h3{
+.sad-movies h2{
     position: absolute;
     top: 1165px;
+    color: #fff;
 
 }
-.searched-movies h3{
+.searched-movies h2{
     position: absolute;
     top: 100px;
+    color: #fff;
 
 }
 
 .footer-home {
     position: absolute;
-    top: 2100px;
+    top: 1300px;
     width: 100%;
 }

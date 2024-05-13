@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Confirmation.css';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
@@ -25,6 +25,13 @@ const Confirmation = () => {
 
     fetchMovieDetails();
   }, [movieId]);
+
+  const navigate = useNavigate();
+
+  const handleClickPayment = () => {
+    // Navigate to the payment page when the button is clicked
+    navigate('/payment');
+  };
 
 
   const generateRandomSeat = () => {
@@ -123,7 +130,7 @@ const Confirmation = () => {
           </div>
         </div>
         <div className="continue">
-          <button>Proceed to checkout</button>
+        <button onClick={handleClickPayment}>Proceed to checkout</button>
         </div>
       </div>
       <Footer />

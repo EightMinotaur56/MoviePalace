@@ -3,7 +3,7 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <div className='footer'>
+    
      <div className="container">
      <div className="branding">
       <i className="fa-brands fa-facebook-f"></i>
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
       </div>
      </div>
-    </div>
+    
   )
 }
 

@@ -27,6 +27,9 @@ body{
     color: #fff;
 
 }
+.info .des{
+    font-size: .7rem;
+}
 
 .title{
     width: 400px;

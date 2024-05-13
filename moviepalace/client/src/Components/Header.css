@@ -15,6 +15,7 @@
     margin-top: 30px;
     
 }
+
 .logo .fa-film {
     margin-right: 20px;
     background: -webkit-linear-gradient(45deg,#8E2DE2, #4A00E0);
@@ -32,6 +33,8 @@ ul {
     display: flex;
     list-style: none;
     justify-content: space-between;
+    text-decoration: none;
+    
 
     
 }
@@ -45,7 +48,7 @@ li:hover {
 }
 .search-box input{
     margin-top: 30px;
-    margin-right: 20px;
+    margin-right: 0px;
     margin-left: 20px;
     width: 200px;
     height: 30px;
@@ -64,6 +67,7 @@ li:hover {
     height: 30px;
     background-color: rgb(255, 255, 255);
     border-radius: 6px;
+    margin-left: 3rem;
 }
 .user-icon .fa-user {
     position: absolute;

@@ -99,21 +99,20 @@ const Home = () => {
       />
       <div className='movies-cat'>
         <div className='now-showing'>
-          <h3>Now Showing</h3>
+          <h2>Now Showing</h2>
           <Movies movies={nowShowingMovies} handleMovieClick={handleMovieClick} />
         </div>
         <div className='just-released'>
-          <h3>Coming Soon...</h3>
+          <h2>Coming Soon...</h2>
           <Movies movies={newlyReleasedMovies} handleMovieClick={handleMovieClick} />
         </div>
         <div className='family-movies'>
-          <h3>Family Movies</h3>
-          <div>
-          <Movies movies={familyMovies} handleMovieClick={handleMovieClick} />
-          </div>
-        </div>
+  <h2>Family Movies</h2>
+  <Movies movies={familyMovies} handleMovieClick={handleMovieClick} />
+</div>
+
         <div className='sad-movies'>
-          <h3>Sad Movies</h3>
+          <h2>Sad Movies</h2>
           <Movies movies={sadMovies} handleMovieClick={handleMovieClick} />
         </div>
       </div>
