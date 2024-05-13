@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './Payment.css';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 
 
 const Payment = () => {
+    const navigate = useNavigate();
+
+    const handleClick =() => {
+        navigate('/');
+    }
 
   return (
     <div className='confirmation'>
@@ -127,7 +132,7 @@ const Payment = () => {
                     </div>
                 </div> 
                 <div class="button">
-                    <button class="click-pay">Pay $25.99</button>
+                    <button onClick={handleClick} class="click-pay">Pay $25.99</button>
                 </div>
             </div>
         </div>

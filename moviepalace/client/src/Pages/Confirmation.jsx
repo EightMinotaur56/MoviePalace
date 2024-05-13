@@ -28,11 +28,22 @@ const Confirmation = () => {
 
   const navigate = useNavigate();
 
-  const handleClickPayment = () => {
+  const handleClickPayment = async () => {
     // Navigate to the payment page when the button is clicked
     navigate('/payment');
+
+    insert();
   };
 
+  const insert = async ()=> await fetch("http://localhost:5000/reservations", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json"
+    },
+    body: JSON.stringify({
+      movie_id:movieId,seat:randomSeat,time:selectedTime
+    })
+  })
 
   const generateRandomSeat = () => {
     const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
